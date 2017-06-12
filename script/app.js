@@ -82,8 +82,7 @@ function Render() {
         movingLineX += 8.91;
         pointArrays.push(' L ' + movingLineX + ' ' + (300 - (num / 1024 * 2)));
    
-
-        movingLine.setAttribute('d', movingLineStart + pointArrays.slice(-1500).join());
+        movingLine.setAttribute('d', movingLineStart + pointArrays.slice(-500).join());
         
         var player = rects[counterRects].animate([
             {
