@@ -408,3 +408,13 @@ h1 {
 }
 #moving-line-three {
 }
+.ver {
+  position: fixed;
+  right: 50%;
+  bottom: 5px;
+    transform: translateX(50%);
+  font-family: 'Helvetica Neue', Helvetica, Arial, 'Lucida Grande', sans-serif;
+  font-size: .8em;
+  font-weight: normal;
+  color: white;
+}
