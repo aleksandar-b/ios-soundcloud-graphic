@@ -1,0 +1,410 @@
+*, *:before {
+  box-sizing: border-box;
+  position: relative;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+.small {
+  transform: scaleY(0);
+}
+
+.content div.item {
+  width: 100%;
+  height: 50px;
+  padding: 1em;
+  color: #fff;
+  cursor: pointer;
+}
+
+.content {
+  background-color: rgba(0, 0, 0, 0.28);
+}
+.truncate {
+  display: block;
+  width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.content input {
+  width: 100%;
+  height: 50px;
+  padding: 1.2em;
+  font-size: 2.5em;
+  font-weight: thin;
+  outline: none;
+  border: 0;
+}
+
+.pathLine {
+  fill: none;
+}
+
+.content div.item:nth-child(odd) {
+  padding: 1em;
+  background: rgba(0, 0, 0, 0.1);
+}
+
+.content div.item:hover {
+  background: #007aff;
+}
+
+.content div:active {
+  background: #009aff;
+}
+
+subheader {
+  display: block;
+  background: rgba(255, 255, 255, 0.8);
+  width: 100%;
+  padding: .55em;
+  padding-top: 1.2em;
+  padding-left: 1em;
+}
+
+subheader span:first-of-type {
+  opacity: .7;
+}
+
+body {
+  background: url("/images/green.jpg") 50% no-repeat fixed;
+  background-size: cover;
+  font: 14px/1.4 'HelveticaNeue-Light', 'Helvetica Neue Light', 'Helvetica Neue', Helvetica, Arial, 'Lucida Grande', sans-serif;
+}
+
+h2 {
+  font-size: 1.4em;
+  font-weight: 300;
+  color: #222;
+}
+
+p:not(:last-child) {
+  margin-bottom: 0.6em;
+}
+
+p.small {
+  font-size: 0.8em;
+  color: #222;
+  text-align: center;
+}
+
+p {
+  color: white;
+  font-weight: thin;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  border-bottom: 1px solid #888;
+}
+
+.blur {
+  transition: filter 2.9s ease;
+}
+
+.blur:before {
+  display: inline-block;
+  content: '';
+  position: absolute;
+  top: -80%;
+  left: -80%;
+  right: -80%;
+  bottom: -80%;
+  background: inherit;
+  filter: blur(75px);
+}
+
+@keyframes opacit {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+article {
+  margin: 0 auto;
+  width: 500px;
+  position: relative;
+  top: 100px;
+  background: inherit;
+  border-radius: 6px;
+  box-shadow: 0 16px 32px rgba(0, 0, 0, 0.65);
+  overflow: hidden;
+  transform-origin: top;
+}
+article .title {
+  padding: 8px;
+  background: white;
+  text-align: center;
+  font-size: .9em;
+}
+article .title:hover {
+  cursor: move;
+}
+article .content {
+  padding: 0%;
+}
+
+.attr {
+  position: fixed;
+  right: 5px;
+  bottom: 5px;
+  font-family: 'Helvetica Neue', Helvetica, Arial, 'Lucida Grande', sans-serif;
+  font-size: 0.8em;
+  font-weight: normal;
+  color: white;
+}
+
+line {
+  opacity: .3;
+}
+
+@keyframes offset {
+  0% {
+    stroke-dashOffset: 200px;
+  }
+  100% {
+    stroke-dashOffset: 0px;
+  }
+}
+svg {
+  will-change: transform;
+  width: 500px;
+  overflow: hidden;
+}
+
+.text {
+  fill: white;
+  opacity: .7;
+  transform: translateY(287px) translateX(-246px);
+}
+
+.tr {
+  width: 700px;
+  height: 150px;
+  margin: 60px auto;
+}
+
+.simpleLines {
+  shape-rendering: crispEdges;
+  opacity: 0.3;
+}
+
+.paddingGroup {
+  transform: translate(0, 200px);
+}
+
+.line1 {
+  stroke-width: 1;
+}
+
+.opet {
+  shape-rendering: crispEdges;
+  stroke-width: 1;
+}
+
+circle {
+  stroke: red;
+  stroke-width: 1;
+}
+
+.krug4 {
+  stroke: green;
+  stroke-width: 1;
+  fill: red;
+}
+
+svg.small {
+  width: 100%;
+  height: 10vm;
+  max-width: 160em;
+  max-height: 160em;
+  min-height: 15vh;
+  /*35em*/
+  float: left;
+}
+
+.arc {
+  stroke-width: 1;
+  fill-opacity: 0;
+  marker-start: url(#loop);
+  marker-end: url(#loop);
+  pointer-events: all;
+}
+
+.clock {
+  stroke: red;
+  fill: purple;
+  stroke-width: 1.3;
+}
+
+.movingLine {
+  stroke-width: 1;
+  stroke: red;
+  fill: purple;
+  stroke: red;
+  stroke-width: 1;
+  fill: red;
+}
+
+path:hover {
+  fill-opacity: 0.3;
+}
+
+.year {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -186%);
+  z-index: -100;
+  opacity: .3;
+}
+
+rect {
+    transform-origin: bottom;
+    shape-rendering: optimizeQuality;
+    shape-rendering: crispEdges;
+    height: 1px;
+    width: 7.16px;
+    fill: rgba(255, 255, 255, 0.54);
+    will-change: transform;
+}
+
+.crisp {
+  shape-rendering: crispEdges;
+  opacity: .1;
+  stroke-dasharray: 1, 2;
+}
+
+.animation {
+  animation: scale123 .8s ease-out;
+  animation-fill-mode: forwards;
+}
+
+@keyframes scale123 {
+  0% {
+    transform: scale3d(1, 0, 1);
+  }
+  100% {
+    transform: scale3d(1, 1, 1);
+    animation-timing-function: ease-out;
+  }
+}
+@keyframes translate {
+  0% {
+    transform: translate3d(0px, 0, 0);
+  }
+  100% {
+    transform: translate3d(-1080px, 0, 0);
+  }
+}
+.move {
+  animation: translate 10.5s linear;
+  animation-fill-mode: forwards;
+}
+
+.hiphop {
+  animation: hiphop 400ms ease-out;
+  transition: all 400ms ease-out;
+  animation-fill-mode: forwards;
+}
+
+@keyframes hiphop {
+  0% {
+    transform: scale3d(1, 1, 1);
+  }
+  50% {
+    transform: scale3d(0, 0, 0);
+  }
+  100% {
+    transform: scale3d(1, 1, 1);
+  }
+}
+@keyframes heartRate {
+  0.00% {
+    transform: translate3d(10.2px, 0, 0) scale(0.898);
+  }
+  10.77% {
+    transform: translate3d(-22.52px, 0, 0) scale(1.2252);
+  }
+  40.51% {
+    transform: translate3d(2.58px, 0, 0) scale(0.9742);
+  }
+  70.26% {
+    transform: translate3d(-0.29px, 0, 0) scale(1.0029);
+  }
+  100.00% {
+    transform: translate3d(0.03px, 0, 0) scale(0.9997);
+  }
+}
+.btn1 {
+  cursor: pointer;
+  padding: 3px 10px 3px 10px;
+  border: 1px solid rgba(0, 95, 143, 0.387);
+  border-radius: 5px;
+  background: #1F375F;
+  color: #fff;
+  margin: 10px;
+}
+
+.addContent {
+  animation: add 1s ease;
+  background: #795548;
+  transform-origin: right bottom;
+}
+
+@keyframes add {
+  0% {
+    opacity: 0;
+    transform: scale(0);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+h1 {
+  color: rgba(27, 120, 162, 0.1);
+}
+
+.pathLine {
+  animation: dashoffset 5.2s linear;
+  animation-fill-mode: forwards;
+}
+
+@keyframes dashoffset {
+  0% {
+    stroke-dashoffset: 2604.7px;
+  }
+  100% {
+    stroke-dashoffset: 0px;
+  }
+}
+
+.list {
+    margin: 0;
+    padding: 0;
+    height: 310px;
+    
+}
+.list div img {
+    height: 32px;
+    width: 32px;
+}
+#moving-line {
+      
+    stroke-width: 1px;
+    stroke-dashArray: 10 10;
+}
+#moving-line-two {
+    stroke-dashArray: 1 1;
+}
+#moving-line-three {
+}
