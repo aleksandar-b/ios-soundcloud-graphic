@@ -4,6 +4,8 @@ $('article').draggable({
 $('button').on('click', function () {
     $('body').css('background', `url(http://upload.wikimedia.org/wikipedia/commons/d/d6/Half_Dome_from_Glacier_Point%2C_Yosemite_NP_-_Diliff.jpg) 50% no-repeat fixed`);
 });
+
+
 var NUMBER_OF_RECTS = 190;
 
 SC.initialize({
@@ -191,7 +193,13 @@ function Item(content, url) {
     }
 
 }
-
+//setTimeout(function () {
+//animate({
+//  el: 'article',
+//  translateY: ['100%', '0%'],
+//  scale: [0,1]
+//},0)
+//})
 $('body').on('click', '.item',function () {
     audio.pause();
     audio.setAttribute('src', $(this).data('url') + '?client_id='+'237d195ad90846f5e6294ade2e8cf87b');
