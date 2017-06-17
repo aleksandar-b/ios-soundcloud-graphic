@@ -77,15 +77,15 @@ function Render() {
         var num = 0;
         var num2 = 0;
         var num3 = 0;
-        
+
         for (var i = 0; i < 1024; i++) {
             num += frequencyData[i];
         }
         movingLineX += 8.91;
         pointArrays.push(' L ' + movingLineX + ' ' + (300 - (num / 1024 * 2)));
-   
+
         movingLine.setAttribute('d', movingLineStart + pointArrays.slice(-500).join());
-        
+
         var player = rects[counterRects].animate([
             {
                 transform: 'scaleY(0)'
@@ -159,16 +159,28 @@ function getTracks(event, query) {
         return;
     }
     if (event.keyCode === 13) {
+        loadingState()
         SC.get('/tracks', {
             q: query,
             limit: 6
         }).then(function (tracks) {
+            loadedState()
             clearList();
             tracks.forEach(function (track) {
                 addToList(track.title, track.stream_url);
             });
         });
     }
+}
+
+function loadingState() {
+    document.querySelector('.list').style.display = 'none';
+    document.querySelector('.loader').style.display = 'block';
+}
+
+function loadedState() {
+    document.querySelector('.list').style.display = 'block';
+    document.querySelector('.loader').style.display = 'none';
 }
 
 function clearList() {
@@ -200,18 +212,18 @@ function Item(content, url) {
 //  scale: [0,1]
 //},0)
 //})
-$('body').on('click', '.item',function () {
+$('body').on('click', '.item', function () {
     audio.pause();
-    audio.setAttribute('src', $(this).data('url') + '?client_id='+'237d195ad90846f5e6294ade2e8cf87b');
+    audio.setAttribute('src', $(this).data('url') + '?client_id=' + '237d195ad90846f5e6294ade2e8cf87b');
     console.log($(this).data('url'));
     audio.play();
 });
-  SC.get('/tracks', {
-            q: "All or nothing frequencies",
-            limit: 6
-        }).then(function (tracks) {
-            clearList();
-            tracks.forEach(function (track) {
-                addToList(track.title, track.stream_url);
-            });
-        });
+SC.get('/tracks', {
+    q: "All or nothing frequencies",
+    limit: 6
+}).then(function (tracks) {
+    clearList();
+    tracks.forEach(function (track) {
+        addToList(track.title, track.stream_url);
+    });
+});
