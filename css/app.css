@@ -75,7 +75,7 @@ subheader span:first-of-type {
 }
 
 body {
-    background: url("https://samosale.github.io/ios-soundcloud-graphic/images/vivaldi-stars.jpg") 50% no-repeat fixed;
+    background: url("/images/vivaldi-stars.jpg") 50% no-repeat fixed;
     background-size: cover;
     font: 14px/1.4 'HelveticaNeue-Light', 'Helvetica Neue Light', 'Helvetica Neue', Helvetica, Arial, 'Lucida Grande', sans-serif;
 }
