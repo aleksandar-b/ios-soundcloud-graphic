@@ -38,8 +38,8 @@ body {
     width: 100%;
     height: 50px;
     padding: 1.2em;
-    font-size: 2.5em;
-    font-weight: thin;
+    font-size: 2em;
+    font-weight: lighter;
     outline: none;
     border: 0;
 }
@@ -57,7 +57,7 @@ body {
     background: #007aff;
 }
 
-.content div:active {
+.content div.item:active {
     background: #009aff;
 }
 
@@ -66,7 +66,7 @@ subheader {
     background: rgba(255, 255, 255, 0.8);
     width: 100%;
     padding: .55em;
-    padding-top: 1.2em;
+    padding-top: .5em;
     padding-left: 1em;
 }
 
@@ -184,8 +184,16 @@ line {
 
 svg {
     will-change: transform;
-    width: 500px;
+    width: 100%;
     overflow: hidden;
+    transform-box: view-box;
+    margin-left: 20px;
+    margin-right: 20px;
+    overflow: hidden;
+}
+
+.window-title {
+    font-size: 16px
 }
 
 .text {
@@ -276,7 +284,7 @@ path:hover {
 }
 
 rect {
-    transform-origin: bottom;
+    transform-origin: center;
     shape-rendering: optimizeQuality;
     shape-rendering: crispEdges;
     height: 1px;

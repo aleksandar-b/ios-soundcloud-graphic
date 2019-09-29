@@ -10,23 +10,26 @@
 </head>
 
 <body>
-    <article class="blur">
-        <div class="title">
+<article class="blur">
+    <div class="title">
             <span style="user-select: none; cursor: default; display: flex; width: 61px; position:absolute; left:0;">
-              <a data-radium="true" style="user-select: none; -webkit-app-region: no-drag; cursor: default; box-sizing: border-box; width: 12px; height: 12px; border-width: 1px; border-style: solid; border-radius: 50%; margin-top: 1px; margin-left: 5px; margin-right: 4px; line-height: 0; background-color: rgb(200, 0, 0); border-color: rgb(200, 0, 0);"></a>
-              <a data-radium="true" style="user-select: none; -webkit-app-region: no-drag; cursor: default; box-sizing: border-box; width: 12px; height: 12px; border-width: 1px; border-style: solid; border-radius: 50%; margin-top: 1px; margin-left: 4px; margin-right: 4px; line-height: 0; background-color: rgb(191, 145, 35); border-color: rgb(173, 125, 21);"></a>
-              <a data-radium="true" style="user-select: none; -webkit-app-region: no-drag; cursor: default; box-sizing: border-box; width: 12px; height: 12px; border-width: 1px; border-style: solid; border-radius: 50%; margin-top: 1px; margin-left: 4px; margin-right: 4px; line-height: 0; background-color: rgb(0, 100, 0); border-color: rgb(0, 100, 0);"></a>
+              <a data-radium="true"
+                 style="user-select: none; -webkit-app-region: no-drag; cursor: default; box-sizing: border-box; width: 12px; height: 12px; border-width: 1px; border-style: solid; border-radius: 50%; margin-top: 1px; margin-left: 5px; margin-right: 4px; line-height: 0; background-color: rgb(200, 0, 0); border-color: rgb(200, 0, 0);"></a>
+              <a data-radium="true"
+                 style="user-select: none; -webkit-app-region: no-drag; cursor: default; box-sizing: border-box; width: 12px; height: 12px; border-width: 1px; border-style: solid; border-radius: 50%; margin-top: 1px; margin-left: 4px; margin-right: 4px; line-height: 0; background-color: rgb(191, 145, 35); border-color: rgb(173, 125, 21);"></a>
+              <a data-radium="true"
+                 style="user-select: none; -webkit-app-region: no-drag; cursor: default; box-sizing: border-box; width: 12px; height: 12px; border-width: 1px; border-style: solid; border-radius: 50%; margin-top: 1px; margin-left: 4px; margin-right: 4px; line-height: 0; background-color: rgb(0, 100, 0); border-color: rgb(0, 100, 0);"></a>
             </span>
             <span>
-                <h2>SoundCloud</h2>
+                <div class="window-title">SoundCloud</div>
             </span>
-        </div>
-        <div class="content">
-            <input placeholder="Search..." onkeypress="getTracks(event, this.value)"/>
-            <subheader>
-                <span>Language:</span>
-                <span>English</span>
-            </subheader>
+    </div>
+    <div class="content">
+        <input placeholder="Search..." onkeypress="getTracks(event, this.value)"/>
+        <subheader>
+            <span>Language:</span>
+            <span>English</span>
+        </subheader>
         <div class="list">
             <div class="item"><span>Thoughtfully redesigning OS X meant going deep into every</span></div>
             <div class="item">Thoughtfully redesigning OS X meant going deep into every</div>
@@ -35,113 +38,109 @@
             <div class="item">Thoughtfully redesigning OS X meant going deep into every</div>
             <div class="item">Thoughtfully redesigning OS X meant going deep into every</div>
         </div>
-            <div class="loader">
+        <div class="loader">
             <img src="images/loader.gif">
-            </div>
-<!--
-            <div>
-            <img src="images/soundcloud-1.svg" height="50%" width="100%">
-            </div>
--->
-            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" class="" viewBox="0 0 1200 460" preserveAspectRatio="xMidYMin meet">
-  
-               <line x1="0" y1="100" x2="1200" y2="100" stroke-dasharray="7, 7"
-                  stroke-width="1" stroke="white" shape-rendering="crisp"/>  
-               <line x1="0" y1="200" x2="1200" y2="200" stroke-dasharray="7, 7"
-                  stroke-width="1" stroke="white" shape-rendering="crisp"/>    
-               <line x1="0" y1="300" x2="1200" y2="300" stroke-dasharray="7, 7"
-                  stroke-width="1" stroke="white" shape-rendering="crisp"/>    
-               <line x1="0" y1="400" x2="1200" y2="400" stroke-dasharray="7, 7"
-                  stroke-width="1" stroke="white" shape-rendering="crisp"/>    
-  
-               <use xlinkHref="#viewBoxBorder"/>
-  
-               <g class="rects move">
-                   <path id="moving-line" d="M0 400" stroke="white" fill="none" />
-                   <path id="moving-line-two" d="M0 200" stroke="white" fill="none" />
-                   <path id="moving-line-three" d="M0 200" stroke="white" fill="none" />
-               </g>
-
-               <g class="text">
-                  <text x="250" y="150" 
-                        fontFamily="Verdana" 
-                        fontSize="16">
-                    Jul
-                  </text>
-                  <text x="350" y="150" 
-                        fontFamily="Verdana" 
-                        fontSize="16">
-                    Sep
-                  </text>
-                   <text x="450" y="150" 
-                        fontFamily="Verdana" 
-                        fontSize="16">
-                    Oct
-                  </text>
-                     <text x="550" y="150" 
-                        fontFamily="Verdana" 
-                        fontSize="16">
-                    Nov
-                  </text>
-                  <text x="650" y="150" 
-                        fontFamily="Verdana" 
-                        fontSize="16">
-                    Dec
-                  </text>
-                  <text x="750" y="150" 
-                        fontFamily="Verdana" 
-                        fontSize="16">
-                    Jan
-                  </text>
-                  <text x="850" y="150" 
-                        fontFamily="Verdana" 
-                        fontSize="16">
-                    Feb
-                  </text>
-                  <text x="950" y="150" 
-                        fontFamily="Verdana" 
-                        fontSize="16">
-                    Mar
-                  </text>
-                  <text x="1050" y="150" 
-                        fontFamily="Verdana" 
-                        fontSize="16">
-                    Apr
-                  </text>
-                  <text x="1150" y="150" 
-                        fontFamily="Verdana" 
-                        fontSize="16">
-                    May
-                  </text>
-                  <text x="1250" y="150" 
-                        fontFamily="Verdana" 
-                        fontSize="16">
-                    Jun
-                  </text>
-                  <text x="1350" y="150" 
-                        fontFamily="Verdana" 
-                        fontSize="16">
-                    Jul
-                  </text>
-                  <text x="1450" y="150" 
-                        fontFamily="Verdana" 
-                        fontSize="16">
-                    Avg
-                  </text>
-                </g>
-            </svg>
         </div>
-    </article>
+        <div style="position:absolute; margin-top: 50px;">
+            <img src="images/soundcloud-1.svg" height="50%" width="100%">
+        </div>
+        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 460"
+             preserveAspectRatio="xMidYMin meet">
+            <line x1="0" y1="100" x2="1200" y2="100" stroke-dasharray="7, 7"
+                  stroke-width="1" stroke="white" shape-rendering="crisp"/>
+            <line x1="0" y1="200" x2="1200" y2="200" stroke-dasharray="7, 7"
+                  stroke-width="1" stroke="white" shape-rendering="crisp"/>
+            <line x1="0" y1="300" x2="1200" y2="300" stroke-dasharray="7, 7"
+                  stroke-width="1" stroke="white" shape-rendering="crisp"/>
+            <line x1="0" y1="400" x2="1200" y2="400" stroke-dasharray="7, 7"
+                  stroke-width="1" stroke="white" shape-rendering="crisp"/>
+            <use xlinkHref="#viewBoxBorder"/>
 
-    <audio src=""></audio>
-   
-    <div class="ver">
-        <h5>Chrome >= 55 </h5>
-        <h5>Made with ♥ and JavaScript</h5>
+            <g class="rects move">
+                <path id="moving-line" d="M0 400" stroke="white" fill="none"/>
+                <path id="moving-line-two" d="M0 200" stroke="white" fill="none"/>
+                <path id="moving-line-three" d="M0 200" stroke="white" fill="none"/>
+            </g>
+
+            <g class="text">
+                <text x="250" y="150"
+                      fontFamily="Verdana"
+                      fontSize="16">
+                    Jul
+                </text>
+                <text x="350" y="150"
+                      fontFamily="Verdana"
+                      fontSize="16">
+                    Sep
+                </text>
+                <text x="450" y="150"
+                      fontFamily="Verdana"
+                      fontSize="16">
+                    Oct
+                </text>
+                <text x="550" y="150"
+                      fontFamily="Verdana"
+                      fontSize="16">
+                    Nov
+                </text>
+                <text x="650" y="150"
+                      fontFamily="Verdana"
+                      fontSize="16">
+                    Dec
+                </text>
+                <text x="750" y="150"
+                      fontFamily="Verdana"
+                      fontSize="16">
+                    Jan
+                </text>
+                <text x="850" y="150"
+                      fontFamily="Verdana"
+                      fontSize="16">
+                    Feb
+                </text>
+                <text x="950" y="150"
+                      fontFamily="Verdana"
+                      fontSize="16">
+                    Mar
+                </text>
+                <text x="1050" y="150"
+                      fontFamily="Verdana"
+                      fontSize="16">
+                    Apr
+                </text>
+                <text x="1150" y="150"
+                      fontFamily="Verdana"
+                      fontSize="16">
+                    May
+                </text>
+                <text x="1250" y="150"
+                      fontFamily="Verdana"
+                      fontSize="16">
+                    Jun
+                </text>
+                <text x="1350" y="150"
+                      fontFamily="Verdana"
+                      fontSize="16">
+                    Jul
+                </text>
+                <text x="1450" y="150"
+                      fontFamily="Verdana"
+                      fontSize="16">
+                    Avg
+                </text>
+            </g>
+        </svg>
     </div>
+</article>
+
+<audio src=""></audio>
+
+<div class="ver">
+    <h5>Chrome >= 55 </h5>
+    <h5>Made with ♥ and JavaScript</h5>
+</div>
 </body>
 <script src="script/jquery.js"></script>
-<script src="script/jquery-ui.js"></script>
 <script src="script/animate.js"></script>
 <script src="https://connect.soundcloud.com/sdk/sdk-3.1.2.js"></script>
 <script src="script/app.js"></script>

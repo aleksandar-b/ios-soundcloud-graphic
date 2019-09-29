@@ -1,11 +1,3 @@
-$('article').draggable({
-    handle: ".title"
-});
-$('button').on('click', function () {
-    $('body').css('background', `url(http://upload.wikimedia.org/wikipedia/commons/d/d6/Half_Dome_from_Glacier_Point%2C_Yosemite_NP_-_Diliff.jpg) 50% no-repeat fixed`);
-});
-
-
 var NUMBER_OF_RECTS = 190;
 
 SC.initialize({
@@ -33,7 +25,6 @@ var movingLineThree = document.getElementById('moving-line-three');
 
 let counter = 0;
 for (var i = 0; i < NUMBER_OF_RECTS; i++) {
-
     var rect = document.createElementNS("http://www.w3.org/2000/svg", "rect");
     rect.setAttribute("x", counter);
     rect.setAttribute("y", "400");
@@ -86,16 +77,16 @@ function Render() {
 
         movingLine.setAttribute('d', movingLineStart + pointArrays.slice(-500).join());
 
-        var player = rects[counterRects].animate([
+        const player = rects[counterRects].animate([
             {
                 transform: 'scaleY(0)'
-           },
+            },
             {
-                transform: `scaleY(${(num/1024)*2})`
-           }], {
+                transform: `scaleY(${(num / 1024) * 2})`
+            }], {
             duration: 800,
             iterations: 1,
-            easing: 'ease-out',
+            easing: 'ease',
             delay: 0,
             fill: 'forwards'
         });
@@ -150,7 +141,7 @@ request.onload = function () {
         audio.play();
         Render();
     }, 1000);
-}
+};
 
 request.send();
 
@@ -159,12 +150,12 @@ function getTracks(event, query) {
         return;
     }
     if (event.keyCode === 13) {
-        loadingState()
+        loadingState();
         SC.get('/tracks', {
             q: query,
             limit: 6
         }).then(function (tracks) {
-            loadedState()
+            loadedState();
             clearList();
             tracks.forEach(function (track) {
                 addToList(track.title, track.stream_url);
@@ -208,7 +199,6 @@ function Item(content, url) {
 $('body').on('click', '.item', function () {
     audio.pause();
     audio.setAttribute('src', $(this).data('url') + '?client_id=' + '237d195ad90846f5e6294ade2e8cf87b');
-    console.log($(this).data('url'));
     audio.play();
 });
 SC.get('/tracks', {
