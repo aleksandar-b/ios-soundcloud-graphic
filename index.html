@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Music app</title>
-    <meta name="Musicolous" content="Music visualisation with SoundCloud Api">
+    <meta name="SoundCloud Visualiser" content="Music visualisation with SoundCloud Api">
     <link rel="stylesheet" href="css/app.css">
 </head>
 
@@ -27,8 +27,7 @@
     <div class="content">
         <input placeholder="Search..." onkeyup="getTracks(event, this.value)"/>
         <subheader>
-            <span>Language:</span>
-            <span>English</span>
+            <span>Language: English</span>
         </subheader>
         <div class="list">
             <div class="item"><span>Loading data. Please wait...</span></div>
@@ -36,7 +35,7 @@
         <div class="loader">
             <img src="images/loader.gif">
         </div>
-        <div style="position:absolute; margin-top: 50px;">
+        <div style="position:absolute; margin-top: 60px;">
             <img src="images/soundcloud-1.svg" height="50%" width="100%">
         </div>
         <svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 460"
@@ -126,6 +125,10 @@
             </g>
         </svg>
     </div>
+    <subheader>
+        <span id="currentSong"></span>
+        <img id="picUrl" alt="artwork_pic" width="24px" height="24px" />
+    </subheader>
 </article>
 
 <audio src=""></audio>

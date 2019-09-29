@@ -129,7 +129,6 @@ function Render() {
     requestAnimationFrame(Render);
 }
 
-var isPlaying = false;
 var request = new XMLHttpRequest();
 
 request.open('GET', 'https://api.soundcloud.com/tracks/289272149/stream?client_id=237d195ad90846f5e6294ade2e8cf87b', true);
@@ -138,6 +137,7 @@ request.responseType = 'blob';
 request.onload = function () {
     audio.src = window.URL.createObjectURL(request.response);
     setTimeout(function () {
+        console.log(request.response);
         audio.play();
         Render();
     }, 1000);
@@ -158,7 +158,7 @@ function getTracks(event, query) {
         loadedState();
         clearList();
         tracks.forEach(function (track) {
-            addToList(track.title, track.stream_url);
+            addToList(track);
         });
     });
 
@@ -178,14 +178,16 @@ function clearList() {
     document.querySelector('.list').innerHTML = "";
 }
 
-function addToList(content, url) {
-    document.querySelector('.list').appendChild(new Item(content, url).create());
+function addToList(track) {
+    document.querySelector('.list').appendChild(new Item(track.title, track.stream_url, track.artwork_url).create());
 }
 
-function Item(content, url) {
+function Item(content, url, picUrl) {
     this.listItem = document.createElement('div');
     this.listItem.classList.add('item');
     this.listItem.setAttribute('data-url', url);
+    this.listItem.setAttribute('data-picUrl', picUrl);
+    this.listItem.setAttribute('data-songName', content);
     this.contentSpan = document.createElement('span');
     this.contentSpan.textContent = content;
     this.contentSpan.classList.add('truncate');
@@ -196,17 +198,25 @@ function Item(content, url) {
     }
 }
 
+function setCurrentSong (songName, picUrl) {
+    document.getElementById('picUrl').src = picUrl;
+    document.getElementById('currentSong').textContent = songName;
+}
+
 $('body').on('click', '.item', function () {
     audio.pause();
     audio.setAttribute('src', $(this).data('url') + '?client_id=' + '237d195ad90846f5e6294ade2e8cf87b');
+    setCurrentSong($(this).data('songname'), $(this).data('picurl'));
     audio.play();
 });
+
 SC.get('/tracks', {
     q: "All or nothing frequencies",
     limit: 6
 }).then(function (tracks) {
     clearList();
+    setCurrentSong(tracks[0].title, tracks[0].artwork_url);
     tracks.forEach(function (track) {
-        addToList(track.title, track.stream_url);
+        addToList(track);
     });
 });

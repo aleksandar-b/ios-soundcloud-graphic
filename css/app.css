@@ -18,7 +18,7 @@ body {
     width: 100%;
     height: 50px;
     padding: 1em;
-    color: #fff;
+    color: #deffff;
     cursor: pointer;
 }
 
@@ -51,23 +51,29 @@ body {
 .content div.item:nth-child(odd) {
     padding: 1em;
     background: rgba(0, 0, 0, 0.1);
+    color: #deffff;
 }
 
 .content div.item:hover {
     background: #007aff;
+    color: #ffffff;
 }
 
 .content div.item:active {
     background: #009aff;
+    color: #ffffff;
 }
 
 subheader {
     display: block;
-    background: rgba(255, 255, 255, 0.8);
+    background: #edf2f7;
     width: 100%;
     padding: .55em;
-    padding-top: .5em;
     padding-left: 1em;
+    display: flex;
+    align-items: start;
+    color: rgb(26, 32, 44);
+    justify-content: space-between;
 }
 
 subheader span:first-of-type {
@@ -75,7 +81,7 @@ subheader span:first-of-type {
 }
 
 body {
-    background: url("/ios-soundcloud-graphic/images/vivaldi-stars.jpg") 50% no-repeat fixed;
+    background: url("/images/vivaldi-stars.jpg") 50% no-repeat fixed;
     background-size: cover;
     font: 14px/1.4 'HelveticaNeue-Light', 'Helvetica Neue Light', 'Helvetica Neue', Helvetica, Arial, 'Lucida Grande', sans-serif;
 }
@@ -186,14 +192,12 @@ svg {
     will-change: transform;
     width: 100%;
     overflow: hidden;
-    transform-box: view-box;
-    margin-left: 20px;
-    margin-right: 20px;
-    overflow: hidden;
+    padding: 0 15px;
 }
 
 .window-title {
-    font-size: 16px
+    font-size: 16px;
+    color: rgb(26, 32, 44);
 }
 
 .text {
