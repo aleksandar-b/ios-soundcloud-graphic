@@ -149,19 +149,19 @@ function getTracks(event, query) {
     if (!query) {
         return;
     }
-    if (event.keyCode === 13) {
-        loadingState();
-        SC.get('/tracks', {
-            q: query,
-            limit: 6
-        }).then(function (tracks) {
-            loadedState();
-            clearList();
-            tracks.forEach(function (track) {
-                addToList(track.title, track.stream_url);
-            });
+
+    loadingState();
+    SC.get('/tracks', {
+        q: query,
+        limit: 6
+    }).then(function (tracks) {
+        loadedState();
+        clearList();
+        tracks.forEach(function (track) {
+            addToList(track.title, track.stream_url);
         });
-    }
+    });
+
 }
 
 function loadingState() {
