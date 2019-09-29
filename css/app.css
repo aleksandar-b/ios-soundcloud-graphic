@@ -48,7 +48,7 @@ body {
     fill: none;
 }
 
-.content div.item:nth-child(odd) {
+.content div.item:nth-child(even) {
     padding: 1em;
     background: rgba(0, 0, 0, 0.1);
     color: #deffff;
@@ -71,7 +71,7 @@ subheader {
     padding: .55em;
     padding-left: 1em;
     display: flex;
-    align-items: start;
+    align-items: center;
     color: rgb(26, 32, 44);
     justify-content: space-between;
 }
@@ -81,7 +81,7 @@ subheader span:first-of-type {
 }
 
 body {
-    background: url("/ios-soundcloud-graphic/images/vivaldi-stars.jpg") 50% no-repeat fixed;
+    background: url("/images/vivaldi-stars.jpg") 50% no-repeat fixed;
     background-size: cover;
     font: 14px/1.4 'HelveticaNeue-Light', 'Helvetica Neue Light', 'Helvetica Neue', Helvetica, Arial, 'Lucida Grande', sans-serif;
 }
@@ -127,15 +127,6 @@ a {
     bottom: -80%;
     background: inherit;
     filter: blur(75px);
-}
-
-@keyframes opacit {
-    0% {
-        opacity: 0;
-    }
-    100% {
-        opacity: 1;
-    }
 }
 
 article {
@@ -193,6 +184,7 @@ svg {
     width: 100%;
     overflow: hidden;
     padding: 0 15px;
+    transform-box: border-box;
 }
 
 .window-title {
@@ -225,55 +217,6 @@ svg {
     stroke-width: 1;
 }
 
-.opet {
-    shape-rendering: crispEdges;
-    stroke-width: 1;
-}
-
-circle {
-    stroke: red;
-    stroke-width: 1;
-}
-
-.krug4 {
-    stroke: green;
-    stroke-width: 1;
-    fill: red;
-}
-
-svg.small {
-    width: 100%;
-    height: 10vm;
-    max-width: 160em;
-    max-height: 160em;
-    min-height: 15vh;
-    /*35em*/
-    float: left;
-}
-
-.arc {
-    stroke-width: 1;
-    fill-opacity: 0;
-    marker-start: url(#loop);
-    marker-end: url(#loop);
-    pointer-events: all;
-}
-
-.clock {
-    stroke: red;
-    fill: purple;
-    stroke-width: 1.3;
-}
-
-.movingLine {
-    stroke-width: 1;
-    stroke: red;
-    fill: purple;
-    stroke: red;
-    stroke-width: 1;
-    fill: red;
-}
-
 path:hover {
     fill-opacity: 0.3;
 }
@@ -288,34 +231,19 @@ path:hover {
 }
 
 rect {
-    transform-origin: center;
-    shape-rendering: optimizeQuality;
     shape-rendering: crispEdges;
     height: 1px;
-    width: 7.16px;
-    fill: rgba(255, 255, 255, 0.54);
+    width: 7px;
+    fill: hsl(18, 100%, 50%);
     will-change: transform;
+    transform-box: fill-box;
+    transform-origin: center bottom;
 }
 
 .crisp {
     shape-rendering: crispEdges;
     opacity: .1;
     stroke-dasharray: 1, 2;
-}
-
-.animation {
-    animation: scale123 .8s ease-out;
-    animation-fill-mode: forwards;
-}
-
-@keyframes scale123 {
-    0% {
-        transform: scale3d(1, 0, 1);
-    }
-    100% {
-        transform: scale3d(1, 1, 1);
-        animation-timing-function: ease-out;
-    }
 }
 
 @keyframes translate {
@@ -330,69 +258,6 @@ rect {
 .move {
     animation: translate 10.5s linear;
     animation-fill-mode: forwards;
-}
-
-.hiphop {
-    animation: hiphop 400ms ease-out;
-    transition: all 400ms ease-out;
-    animation-fill-mode: forwards;
-}
-
-@keyframes hiphop {
-    0% {
-        transform: scale3d(1, 1, 1);
-    }
-    50% {
-        transform: scale3d(0, 0, 0);
-    }
-    100% {
-        transform: scale3d(1, 1, 1);
-    }
-}
-
-@keyframes heartRate {
-    0.00% {
-        transform: translate3d(10.2px, 0, 0) scale(0.898);
-    }
-    10.77% {
-        transform: translate3d(-22.52px, 0, 0) scale(1.2252);
-    }
-    40.51% {
-        transform: translate3d(2.58px, 0, 0) scale(0.9742);
-    }
-    70.26% {
-        transform: translate3d(-0.29px, 0, 0) scale(1.0029);
-    }
-    100.00% {
-        transform: translate3d(0.03px, 0, 0) scale(0.9997);
-    }
-}
-
-.btn1 {
-    cursor: pointer;
-    padding: 3px 10px 3px 10px;
-    border: 1px solid rgba(0, 95, 143, 0.387);
-    border-radius: 5px;
-    background: #1F375F;
-    color: #fff;
-    margin: 10px;
-}
-
-.addContent {
-    animation: add 1s ease;
-    background: #795548;
-    transform-origin: right bottom;
-}
-
-@keyframes add {
-    0% {
-        opacity: 0;
-        transform: scale(0);
-    }
-    100% {
-        opacity: 1;
-        transform: scale(1);
-    }
 }
 
 h1 {
@@ -437,22 +302,4 @@ h1 {
 #moving-line {
     stroke-width: 1px;
     stroke-dashArray: 10 10;
-}
-
-#moving-line-two {
-    stroke-dashArray: 1 1;
-}
-
-#moving-line-three {}
-
-.ver {
-    position: fixed;
-    right: 50%;
-    bottom: 5px;
-    text-align: center;
-    transform: translateX(50%);
-    font-family: 'Helvetica Neue', Helvetica, Arial, 'Lucida Grande', sans-serif;
-    font-size: .8em;
-    font-weight: normal;
-    color: white;
 }

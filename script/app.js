@@ -20,8 +20,6 @@ var frequencyData = new Uint8Array(bufferLength);
 
 var svg = document.getElementsByClassName('rects')[0];
 var movingLine = document.getElementById('moving-line');
-var movingLineTwo = document.getElementById('moving-line-two');
-var movingLineThree = document.getElementById('moving-line-three');
 
 let counter = 0;
 for (var i = 0; i < NUMBER_OF_RECTS; i++) {
@@ -39,26 +37,13 @@ ml.setAttribute("d", "M0 400");
 ml.setAttribute("stroke", "white");
 ml.setAttribute("fill", "none");
 ml.setAttribute("id", "moving-line");
-var ml2 = document.createElementNS("http://www.w3.org/2000/svg", "path");
-ml2.setAttribute("d", "M0 200");
-ml2.setAttribute("stroke", "white");
-ml2.setAttribute("fill", "none");
-ml2.setAttribute("id", "moving-line-two");
-var ml3 = document.createElementNS("http://www.w3.org/2000/svg", "path");
-ml3.setAttribute("d", "M0 400");
-ml3.setAttribute("stroke", "white");
-ml3.setAttribute("fill", "none");
-ml3.setAttribute("id", "moving-line-three");
 
 var rects = document.getElementsByTagName('rect');
-var len = rects.length;
 
 var counterRects = 0;
 var movingLineX = 0;
 var movingLineStart = 'M0 400';
 var pointArrays = [];
-var pointArrays2 = [];
-var pointArrays3 = [];
 
 
 function Render() {
@@ -66,8 +51,6 @@ function Render() {
 
     if (counterRects < NUMBER_OF_RECTS) {
         var num = 0;
-        var num2 = 0;
-        var num3 = 0;
 
         for (var i = 0; i < 1024; i++) {
             num += frequencyData[i];
@@ -86,7 +69,7 @@ function Render() {
             }], {
             duration: 800,
             iterations: 1,
-            easing: 'ease',
+            easing: 'ease-out',
             delay: 0,
             fill: 'forwards'
         });
