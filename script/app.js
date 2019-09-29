@@ -1,7 +1,7 @@
 var NUMBER_OF_RECTS = 190;
 
 SC.initialize({
-    client_id: '516b790a82b7c6d89856376fa4ced361',
+    client_id: 'bec021ee2767f7fc73542076a41c9012',
     redirect_uri: 'https://storymore.com/soundcloud/'
 });
 
