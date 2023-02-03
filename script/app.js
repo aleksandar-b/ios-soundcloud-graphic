@@ -113,7 +113,7 @@ function Render() {
 
 var request = new XMLHttpRequest();
 
-request.open('GET', 'https://api.soundcloud.com/tracks/289272149/stream?client_id=237d195ad90846f5e6294ade2e8cf87b', true);
+request.open('GET', 'https://api.soundcloud.com/tracks/289272149/stream?client_id=bec021ee2767f7fc73542076a41c9012', true);
 request.responseType = 'blob';
 
 request.onload = function () {
