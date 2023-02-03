@@ -187,7 +187,7 @@ function setCurrentSong (songName, picUrl) {
 
 $('body').on('click', '.item', function () {
     audio.pause();
-    audio.setAttribute('src', $(this).data('url') + '?client_id=' + '237d195ad90846f5e6294ade2e8cf87b');
+    audio.setAttribute('src', $(this).data('url') + '?client_id=' + 'bec021ee2767f7fc73542076a41c9012');
     setCurrentSong($(this).data('songname'), $(this).data('picurl'));
     audio.play();
 });
