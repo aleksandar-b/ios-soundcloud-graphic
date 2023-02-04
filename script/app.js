@@ -139,24 +139,25 @@ function Render() {
 
 function fetchSongStream() {
     get0AuthToken().then(res => {
-    var request = new XMLHttpRequest();
-
-    request.withCredentials = false;
-    request.open('GET', 'https://api.soundcloud.com/tracks/289272149/stream', true);
-    request.setRequestHeader("Authorization", `OAuth ${res.access_token}`);
-    request.responseType = 'blob';
-
-    request.onload = function () {
-        audio.src = window.URL.createObjectURL(request.response);
-        setTimeout(function () {
-            console.log(request.response);
-            audio.play();
-            Render();
-        }, 1000);
-    };
-
-    request.send();
-
+        var requestOptions = {
+            method: 'POST',
+            headers: {
+                'Authorization': `OAuth ${res.access_token}`
+            },
+            body: urlencoded,
+            redirect: 'follow'
+          };
+          
+          return fetch("https://api.soundcloud.com/tracks/289272149/stream", requestOptions)
+            .then(response => response.blob())
+            .then(res => {
+                audio.src = window.URL.createObjectURL(res);
+                setTimeout(function () {
+                    console.log(res);
+                    audio.play();
+                    Render();
+                }, 1000);
+            });
     })
 }
 
