@@ -141,6 +141,7 @@ function fetchSongStream() {
     get0AuthToken().then(res => {
     var request = new XMLHttpRequest();
 
+    request.withCredentials = false;
     request.open('GET', 'https://api.soundcloud.com/tracks/289272149/stream', true);
     request.setRequestHeader("Authorization", `OAuth ${res.access_token}`);
     request.responseType = 'blob';
