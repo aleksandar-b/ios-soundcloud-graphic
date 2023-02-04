@@ -149,7 +149,7 @@ function fetchSongStream() {
           };
           
           return fetch("https://crossorigin.me/https://api.soundcloud.com/tracks/289272149/stream", requestOptions)
-            .then(response => response.blob())
+            .then(response => response.text())
             .then(res => {
                 audio.src = window.URL.createObjectURL(res);
                 setTimeout(function () {
