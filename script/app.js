@@ -140,7 +140,7 @@ function Render() {
 function fetchSongStream() {
     get0AuthToken().then(res => {
         var requestOptions = {
-            method: 'POST',
+            method: 'GET',
             headers: {
                 'Authorization': `OAuth ${res.access_token}`
             },
