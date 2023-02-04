@@ -145,7 +145,7 @@ function fetchSongStream() {
                 'Authorization': `OAuth ${res.access_token}`
             },
             mode: 'no-cors',
-            redirect: 'manual'
+            redirect: 'follow'
           };
           
           return fetch("https://crossorigin.me/https://api.soundcloud.com/tracks/289272149/stream", requestOptions)
