@@ -4,6 +4,32 @@ SC.initialize({
     client_id: 'bec021ee2767f7fc73542076a41c9012'
 });
 
+function get0AuthToken () {
+    var myHeaders = new Headers();
+    myHeaders.append("Content-Type", "application/x-www-form-urlencoded");
+
+var urlencoded = new URLSearchParams();
+urlencoded.append("client_id", "bec021ee2767f7fc73542076a41c9012");
+urlencoded.append("client_secret", "6441f302d34f1e8fbfc38d82830e39b4");
+urlencoded.append("grant_type", "client_credentials");
+
+var requestOptions = {
+  method: 'POST',
+  headers: myHeaders,
+  body: urlencoded,
+  redirect: 'follow'
+};
+
+return fetch("https://api.soundcloud.com/oauth2/token", requestOptions)
+  .then(response => response.json())
+  .then(result => {
+     localStorage.setItem('auth', JSON.stringify(result))
+     console.log(result)
+     return result;
+  })
+  .catch(error => console.log('error', error))
+}
+
 var audioContext = new AudioContext();
 var audio = document.getElementsByTagName('audio')[0];
 audio.crossOrigin = "anonymous";
@@ -111,21 +137,29 @@ function Render() {
     requestAnimationFrame(Render);
 }
 
-var request = new XMLHttpRequest();
+function fetchSongStream() {
+    get0AuthToken.then(res => {
+    var request = new XMLHttpRequest();
 
-request.open('GET', 'https://api.soundcloud.com/tracks/289272149/stream?client_id=bec021ee2767f7fc73542076a41c9012', true);
-request.responseType = 'blob';
+    request.open('GET', 'https://api.soundcloud.com/tracks/289272149/stream?client_id=bec021ee2767f7fc73542076a41c9012', true);
+    request.setRequestHeader("Authorization", `OAuth ${res.access_token}`);
+    request.responseType = 'blob';
 
-request.onload = function () {
-    audio.src = window.URL.createObjectURL(request.response);
-    setTimeout(function () {
-        console.log(request.response);
-        audio.play();
-        Render();
-    }, 1000);
-};
+    request.onload = function () {
+        audio.src = window.URL.createObjectURL(request.response);
+        setTimeout(function () {
+            console.log(request.response);
+            audio.play();
+            Render();
+        }, 1000);
+    };
 
-request.send();
+    request.send();
+
+    })
+}
+
+fetchSongStream()
 
 function getTracks(event, query) {
     if (!query) {
