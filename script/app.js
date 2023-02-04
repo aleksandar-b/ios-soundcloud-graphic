@@ -144,7 +144,6 @@ function fetchSongStream() {
             headers: {
                 'Authorization': `OAuth ${res.access_token}`
             },
-            body: urlencoded,
             redirect: 'follow'
           };
           
