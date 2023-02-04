@@ -144,12 +144,11 @@ function fetchSongStream() {
             headers: {
                 'Authorization': `OAuth ${res.access_token}`
             },
-            mode: 'no-cors',
-            redirect: 'follow'
+            redirect: 'manual'
           };
           
+          
           return fetch("https://crossorigin.me/https://api.soundcloud.com/tracks/289272149/stream", requestOptions)
-            .then(response => response.text())
             .then(res => {
                 audio.src = window.URL.createObjectURL(res);
                 setTimeout(function () {
