@@ -138,7 +138,7 @@ function Render() {
 }
 
 function fetchSongStream() {
-    get0AuthToken.then(res => {
+    get0AuthToken().then(res => {
     var request = new XMLHttpRequest();
 
     request.open('GET', 'https://api.soundcloud.com/tracks/289272149/stream?client_id=bec021ee2767f7fc73542076a41c9012', true);
