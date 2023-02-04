@@ -144,6 +144,7 @@ function fetchSongStream() {
             headers: {
                 'Authorization': `OAuth ${res.access_token}`
             },
+            mode: 'no-cors',
             redirect: 'manual'
           };
           
