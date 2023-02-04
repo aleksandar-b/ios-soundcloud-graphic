@@ -149,6 +149,7 @@ function fetchSongStream() {
           
           
           return fetch("https://corsproxy.io/?"  + encodeURIComponent("https://api.soundcloud.com/tracks/289272149/stream"), requestOptions)
+            .then(res => res.blob())
             .then(res => {
                 audio.src = window.URL.createObjectURL(res);
                 setTimeout(function () {
